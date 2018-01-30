@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<!-- Head -->
+<head>
+
+	<title>登录表单</title>
+
+	<meta http-equiv="Pragma" content="no-cache"/>
+	<meta http-equiv="Cache-Control" content="no-cache"/>
+	<meta http-equiv="Expires" content="0"/>
+
+	<link type="text/css" rel="stylesheet" th:href="@{/css/style.css}" media="all"/>
+
+</head>
+<body>
+<h1></h1>
+
+<div class="container w3layouts agileits">
+	<div class="login w3layouts agileits">
+		<h2>登 录</h2>
+		<form th:action="@{/login}" method="post">
+			<input type="text" Name="username" placeholder="用户名" required=""/>
+			<input type="password" Name="password" placeholder="密码" required=""/>
+
+			<ul class="tick w3layouts agileits">
+			<span id="msg" style="color: brown" th:if="${session.SPRING_SECURITY_LAST_EXCEPTION}" th:inline="text">
+	  		[[${session.SPRING_SECURITY_LAST_EXCEPTION.message}]]
+  			</span>
+			</ul>
+
+			<ul class="tick w3layouts agileits">
+				<li>
+					<input id="remember-me"
+						   name="remember-me"
+						   type="checkbox"/>
+					<label for="remember-me"><span></span>记住我</label>
+				</li>
+			</ul>
+			<div class="send-button w3layouts agileits">
+					<input type="submit" value="登 录" />
+			</div>
+		</form>
+		<a href="#">忘记密码?</a>
+		<div class="social-icons w3layouts agileits">
+			<p>- 其他方式登录 -</p>
+			<ul>
+				<li class="qq"><a href="#">
+					<span class="icons w3layouts agileits"></span>
+					<span class="text w3layouts agileits">QQ</span></a></li>
+				<li class="weixin w3ls"><a href="#">
+					<span class="icons w3layouts"></span>
+					<span class="text w3layouts agileits">微信</span></a></li>
+				<li class="weibo aits"><a href="#">
+					<span class="icons agileits"></span>
+					<span class="text w3layouts agileits">微博</span></a></li>
+				<div class="clear"> </div>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+</div>
+
+</body>
+<!-- //Body -->
+
+</html>
