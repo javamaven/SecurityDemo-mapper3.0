@@ -43,7 +43,7 @@ public class HelloController {
         City city = new City();
         city.setName("fgdfg");
         city.setId(11);
-        cityService.selectCount(11);
+        //cityService.selectCount(11);
         return "/admin/hello";
     }
 
